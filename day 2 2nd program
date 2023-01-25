@@ -1,0 +1,13 @@
+b=float(input("enter the year"))
+a=int(b)
+if a>0:
+    if a%400==0 or a%4==0:
+        print("the year is a leap year!")
+    elif a%4==2:
+        print("the given year is non leap year!")
+        print("leap year is:",a-2)
+    elif a%4==3:
+        print("the given year is non leap year!")
+        print("leap year is:",a-3)
+    else:
+        print("the years cannot br zero or negative!")
