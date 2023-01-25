@@ -1,0 +1,10 @@
+def climbstairs(n):
+    if n<=1:
+        return n
+    return climbstairs(n-1)+climbstairs(n-2)
+def countway(s):
+    return climbstairs(s+1)
+s=int(input("enter the number"))
+print("the number of ways")
+print(countway(s))
+
