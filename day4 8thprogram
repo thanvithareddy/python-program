@@ -1,0 +1,53 @@
+def value(r):
+    if (r == 'I'):
+        return 1
+    if (r == 'v'):
+        return 5
+    if (r == 'x'):
+        return 10
+    if (r == 'L'):
+        return 50
+    if (r == 'C'):
+        return 100
+    if (r == 'D'):
+        return 500
+    if (r == 'M'):
+        return 1000
+    return -1
+
+
+def romantodecimal(str):
+    res = 0
+    i = 0
+
+    while (i < len(str)):
+
+        #getting value of symbol s[i]
+        s1 = value(str[i])
+
+        if (i + 1 < len(str)):
+
+            #getting value of symbol s[i + 1]
+            s2 = value(str[i + 1])
+
+            #comparing both values
+            if (s1 >= s2):
+
+                # value of current symbol is greater
+                       
+                  # or equal to the next symbol
+                res = res + s1
+                i = i + 1
+            else:
+
+                # value of current symbol is greater
+                # or equal to the next symbol
+                res = res + s2 - s1
+        else:
+                res = res + s1
+                i = i + 1
+
+        return res
+# driver code
+print("integer form of roman numeral is"),
+print(romantodecimal("LVIII"))
