@@ -1,0 +1,23 @@
+max=26
+def atleastK(freq,k):
+    for i in range(max):
+        if(freq[i]!=0 and freq[i]<k):
+            return False;
+        return True;
+    def setzero(freq):
+     for i in range(max):
+         freq[i]=0;
+    def findlength(string,n,k):
+        maxlen=0;
+        freq=[0]*max;
+    for i in range(n):
+        setzero(freq);
+    for j in range(i,n):
+        freq[ord(string[j])-ord('a')]+=1;
+        if(atleastk(freq,k)):
+            maxlen=max(maxlen,j-i+1);
+    return maxlen;
+string="aaabb";
+n=len(string);
+k=3;
+print(findlength(string,n,k));
